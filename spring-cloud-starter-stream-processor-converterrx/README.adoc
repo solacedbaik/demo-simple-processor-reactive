@@ -1,0 +1,57 @@
+//tag::ref-doc[]
+= Converter Processor
+
+Use the converter app in a stream to convert a Message's content or structure.
+
+The converter processor is used by passing a SpEL expression. The expression should return the modified message or payload. 
+
+As part of the SpEL expression you can make use of the pre-registered JSON Path function. The syntax is #jsonPath(payload,'<json path expression>')
+
+== Input
+
+=== Headers
+
+N/A
+
+=== Payload
+
+* Any
+
+== Output
+
+=== Headers
+
+N/A
+
+=== Payload
+
+* Any
+
+== Options
+
+The **$$converter$$** $$processor$$ has the following options:
+
+//tag::configuration-properties[]
+//end::configuration-properties[]
+
+== Build
+
+```
+$ ./mvnw clean install -PgenerateApps
+$ cd apps
+```
+You can find the corresponding binder based projects here.
+You can then cd into one one of the folders and build it:
+```
+$ ./mvnw clean package
+```
+
+== Examples
+
+```
+java -jar converter-processor.jar --expression=payload.toUpperCase()
+```
+
+This converter will convert all message payloads to upper case.
+
+//end::ref-doc[]
