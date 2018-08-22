@@ -32,6 +32,7 @@ N/A
 The **$$converter$$** $$processor$$ has the following options:
 
 //tag::configuration-properties[]
+$$converterrx.convert-to-celsius$$:: $$<documentation missing>$$ *($$Boolean$$, default: `$$true$$`)*
 //end::configuration-properties[]
 
 == Build
